@@ -6,11 +6,6 @@ export default {
   functional: true,
 
   props: {
-    tag: {
-      type: String,
-      default: 'div'
-    },
-
     duration: Number,
     easing: String
   },
