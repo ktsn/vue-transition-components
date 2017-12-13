@@ -20,7 +20,7 @@ export default {
   }
 } as FunctionalComponentOptions
 
-function enter(duration: number, easing: string) {
+function enter(duration: number | undefined, easing: string | undefined) {
   return (el: HTMLElement): void => {
     const s = el.style
     s.height = ''
@@ -28,8 +28,8 @@ function enter(duration: number, easing: string) {
 
     s.overflow = 'hidden'
     s.height = '0'
-    s.transitionDuration = duration + 'ms'
-    s.transitionTimingFunction = easing
+    s.transitionDuration = duration ? duration + 'ms' : ''
+    s.transitionTimingFunction = easing || ''
 
     nextFrame(() => {
       s.height = height + 'px'
@@ -42,13 +42,13 @@ function afterEnter(el: HTMLElement): void {
   s.overflow = s.height = s.transitionDuration = s.transitionTimingFunction = ''
 }
 
-function leave(duration: number, easing: string) {
+function leave(duration: number | undefined, easing: string | undefined) {
   return (el: HTMLElement): void => {
     const s = el.style
     s.overflow = 'hidden'
     s.height = el.scrollHeight + 'px'
-    s.transitionDuration = duration + 'ms'
-    s.transitionTimingFunction = easing
+    s.transitionDuration = duration ? duration + 'ms' : ''
+    s.transitionTimingFunction = easing || ''
 
     nextFrame(() => {
       s.height = '0'
