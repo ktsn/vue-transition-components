@@ -1,0 +1,51 @@
+{
+  "name": "vue-transition-components",
+  "version": "0.0.0",
+  "author": "katashin",
+  "description": "Transition component collection of Vue.js",
+  "keywords": [
+    "Vue",
+    "transition",
+    "animation",
+    "component",
+    "UI"
+  ],
+  "license": "MIT",
+  "main": "dist/vue-transition-components.cjs.js",
+  "module": "dist/vue-transition-components.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "homepage": "https://github.com/ktsn/vue-transition-components",
+  "bugs": "https://github.com/ktsn/vue-transition-components/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktsn/vue-transition-components.git"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run test && npm run clean && npm run build",
+    "clean": "rm -rf lib dist .tmp",
+    "build": "npm run build:ts && npm run build:rollup",
+    "build:ts": "tsc -p src",
+    "build:rollup": "node scripts/build.js",
+    "watch:test": "webpack --watch --config scripts/webpack.config.test.js",
+    "lint": "tslint \"src/**/*.ts\" && tslint \"test/**/*.ts\"",
+    "test": "webpack-dev-server --config scripts/webpack.config.test.js --hot"
+  },
+  "devDependencies": {
+    "glob": "^7.1.0",
+    "npm-run-all": "^4.0.2",
+    "rollup": "^0.52.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "ts-loader": "^3.0.5",
+    "tslint": "^5.0.0",
+    "tslint-config-ktsn": "^2.0.0",
+    "typescript": "^2.3.2",
+    "uglify-js": "^3.0.1",
+    "vue": "^2.5.10",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
