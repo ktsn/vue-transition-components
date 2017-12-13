@@ -2,7 +2,7 @@ import Vue, { FunctionalComponentOptions, PropOptions } from 'vue'
 import { nextFrame, addListener } from './utils'
 
 export default {
-  name: 'TransitionAccordion',
+  name: 'TransitionDisclosure',
   functional: true,
 
   props: {

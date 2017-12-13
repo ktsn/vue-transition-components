@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { TransitionAccordion } from '../../src/index'
+import { TransitionDisclosure } from '../../src/index'
 
 const vm = new Vue({
   el: '#app',
@@ -11,6 +11,6 @@ const vm = new Vue({
   },
 
   components: {
-    TransitionAccordion
+    TransitionDisclosure
   }
 })

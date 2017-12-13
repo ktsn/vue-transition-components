@@ -1,1 +1,1 @@
-export { default as TransitionAccordion } from './TransitionAccordion'
+export { default as TransitionDisclosure } from './TransitionDisclosure'
