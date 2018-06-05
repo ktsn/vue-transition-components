@@ -1,6 +1,6 @@
 import { VNodeData } from 'vue'
 
-const raf = window && window.requestAnimationFrame
+const raf = typeof window !== 'undefined' && window.requestAnimationFrame
   ? window.requestAnimationFrame.bind(window)
   : ((fn: () => void): void => { setTimeout(fn, 0) })
 
