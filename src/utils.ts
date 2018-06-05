@@ -1,8 +1,8 @@
 import { VNodeData } from 'vue'
 
-const raf = window.requestAnimationFrame
-  || window.webkitRequestAnimationFrame
-  || ((fn: () => void): void => { window.setTimeout(fn, 0) })
+const raf = window && window.requestAnimationFrame
+  ? window.requestAnimationFrame.bind(window)
+  : ((fn: () => void): void => { setTimeout(fn, 0) })
 
 export function nextFrame(fn: () => void): void {
   raf(() => raf(fn))
